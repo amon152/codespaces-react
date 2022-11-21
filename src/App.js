@@ -1,29 +1,17 @@
-import './App.css';
+import { useState } from "react";
+function App(){
+  const [value, setValue]= useState(0)
+  return(
+    <>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
+    <h1>Counter App</h1>
+    <h2>{value}</h2>
+    <button className="btn" onClick={()=>setValue(value +1)}>increase</button>
+    <button className="btn" onClick={()=>setValue(value -1)}>Decrease</button>
+    <button className="btn" onClick={()=>setValue(0)}>Reset</button>
+    
+    </>
   );
-}
 
+}
 export default App;
